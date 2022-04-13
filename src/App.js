@@ -19,7 +19,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <Heading />
-        {/* <ContactGrid /> */}
         <ContactTable />
       </div>
     </ThemeProvider>
