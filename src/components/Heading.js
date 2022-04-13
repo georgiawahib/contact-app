@@ -6,10 +6,10 @@ function Heading() {
     <>
       <div>
         <Typography variant="h3" gutterBottom component="div">
-          Contacts
+          My Contacts
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          Click on a contact to find out more information
+          Pick a contact to see more, begin typing in the search bar to search.
         </Typography>
       </div>
     </>

@@ -9,6 +9,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import CircularProgress from "@mui/material/CircularProgress";
+import SearchBar from "material-ui-search-bar";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -35,10 +36,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function ContactTable() {
   const [isLoading, setIsLoading] = useState(true);
   const [allUsers, setAllUsers] = useState([]);
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  const [open, setOpen] = React.useState(false);
-  const [selectedUser, setSelectedUser] = React.useState({});
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [open, setOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState({});
+  const [searchFilter, setSearchFilter] = useState(" ");
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -65,7 +67,18 @@ export default function ContactTable() {
       {isLoading && <CircularProgress />}
       {!isLoading && (
         <>
-          <TableContainer component={Paper} sx={{ maxHeight: "75vh" }}>
+          <SearchBar
+            value={searchFilter}
+            onChange={(newValue) => {
+              setSearchFilter(newValue);
+            }}
+            placeholder={"Search for a name"}
+            style={{
+              marginBottom: 20,
+              maxWidth: 100000,
+            }}
+          />
+          <TableContainer component={Paper} sx={{ maxHeight: "80vh" }}>
             <Table stickyHeader aria-label="customized table">
               <TableHead>
                 <TableRow>
@@ -78,6 +91,9 @@ export default function ContactTable() {
               </TableHead>
               <TableBody>
                 {allUsers
+                  .filter((user) =>
+                    user.name.toLowerCase().includes(searchFilter.toLowerCase())
+                  )
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row) => (
                     <StyledTableRow
@@ -112,7 +128,8 @@ export default function ContactTable() {
             </Table>
           </TableContainer>
           <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
+            rowsPerPageOptions={[]}
+            color="secondary"
             component="div"
             count={allUsers.length}
             rowsPerPage={rowsPerPage}
