@@ -71,6 +71,7 @@ export default function ContactTable() {
             value={searchFilter}
             onChange={(newValue) => {
               setSearchFilter(newValue);
+              setPage(0);
             }}
             placeholder={"Search for a name"}
             style={{
