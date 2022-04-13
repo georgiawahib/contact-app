@@ -4,9 +4,14 @@ import Typography from "@mui/material/Typography";
 function Heading() {
   return (
     <>
-      <Typography variant="h3" gutterBottom component="div">
-        Contacts
-      </Typography>
+      <div>
+        <Typography variant="h3" gutterBottom component="div">
+          Contacts
+        </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          Click on a contact to find out more information
+        </Typography>
+      </div>
     </>
   );
 }

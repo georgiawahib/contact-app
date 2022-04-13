@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans:wght@600&family=Plus+Jakarta+Sans:wght@400;700&display=swap");
+
 .App {
-  padding: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
+  padding-top: 20px;
 }
 
 .App-logo {
@@ -8,7 +12,8 @@
 }
 
 body {
-  background-color: #ffe082;
+  margin: 0;
+  background-color: #f3eaeb;
 }
 
 @media (prefers-reduced-motion: no-preference) {
