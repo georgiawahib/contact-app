@@ -40,7 +40,7 @@ export default function ContactTable() {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [open, setOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState({});
-  const [searchFilter, setSearchFilter] = useState(" ");
+  const [searchFilter, setSearchFilter] = useState("");
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
