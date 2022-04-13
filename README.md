@@ -2,7 +2,7 @@
 
 An app that displays a simple table of contacts
 
-Demo is available https://contacts-app-iota.vercel.app/
+Live demo is available here https://contacts-app-iota.vercel.app/
 
 ## Features
 - Search through contact list
@@ -11,7 +11,13 @@ Demo is available https://contacts-app-iota.vercel.app/
 
 # Running the project
 
-In the project directory, you can run:
+Project was run on Node v17.9.0, installed through [https://github.com/nvm-sh/nvm](nvm).
+
+In the project directory, you can run both:
+
+### `npm install`
+
+To install project dependencies
 
 ### `npm start`
 
