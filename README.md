@@ -2,6 +2,8 @@
 
 An app that displays a simple table of contacts
 
+Demo is available https://contacts-app-iota.vercel.app/
+
 ## Features
 - Search through contact list
 - Paginated table of results
